@@ -1,9 +1,14 @@
 {
-  "buildCommand": "npx vite build",
-  "outputDirectory": "dist",
-  "devCommand": "npx vite",
-  "installCommand": "npm install --legacy-peer-deps",
-  "framework": "vite",
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": { 
+        "distDir": "dist",
+        "buildCommand": "npm run build"
+      }
+    }
+  ],
   "rewrites": [
     {
       "source": "/(.*)",
